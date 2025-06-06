@@ -3,15 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <title>Cube Collector 3D</title>
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
   </head>
   <body style="margin: 0; overflow: hidden;">
     <div id="scoreboard">Distance: 0 m</div>
 
-    <div id="gameOverScreen">
+    <div id="gameOverScreen" style="display: none;">
       <div id="finalScore">Your Score: 0</div>
-      <div id="highScoreDisplay">High Score: 0</div> <!-- ✅ Added here -->
+      <div id="highScoreDisplay">High Score: 0</div>
       <button onclick="location.reload()">Restart</button>
     </div>
 
@@ -21,7 +24,13 @@
       import initGame from './src/main.js';
 
       initGame();
+      
+    
     </script>
+</script>
+
+    
+
+ 
   </body>
 </html>
- 

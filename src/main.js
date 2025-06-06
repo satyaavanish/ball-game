@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { World } from './World';
 import { createPlayer } from './Player';
+
 const world = new World();
 const scene = world.scene;
 const camera = world.camera;
@@ -9,8 +10,12 @@ const player = createPlayer(scene);
 document.body.appendChild(renderer.domElement);
 
 const keys = {};
-window.addEventListener('keydown', e => keys[e.key.toLowerCase()] = true);
-window.addEventListener('keyup', e => keys[e.key.toLowerCase()] = false);
+ window.addEventListener('keydown', e => {
+  if (e.key) keys[e.key.toLowerCase()] = true;
+});
+window.addEventListener('keyup', e => {
+  if (e.key) keys[e.key.toLowerCase()] = false;
+});
 
 let isJumping = false;
 let jumpVelocity = 0;
